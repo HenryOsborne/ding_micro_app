@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@vant/auto-import-resolver": "^1.2.1",
+    "unplugin-auto-import": "^0.19.0",
+    "unplugin-vue-components": "^0.28.0"
+  }
+}
