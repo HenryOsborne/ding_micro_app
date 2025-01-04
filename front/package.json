@@ -11,6 +11,8 @@
   "dependencies": {
     "@vant/auto-import-resolver": "^1.2.1",
     "axios": "^1.7.9",
+    "dingtalk-jsapi": "^3.0.42",
+    "js-cookie": "^3.0.5",
     "pinia": "^2.3.0",
     "unplugin-auto-import": "^0.19.0",
     "unplugin-vue-components": "^0.28.0",
