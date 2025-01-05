@@ -20,14 +20,14 @@ export const getTicket = async (token) => {
   // 获取本地的存放的accessticket
   let accessTicket = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../datas/ticket.json")));
   // 如果失效，重新请求
-  if (accessTicket.jsapiTicket === '' || accessTicket.expireIn < currentTime) {
+  if (accessTicket.jsapiTicket == '' || accessTicket.expireIn < currentTime) {
     console.log("ticket失效");
     // 获取新的ticket
     console.log("get remote: ticket");
     // try {
     let data = await jsapiTicket(token);
     accessTicket.jsapiTicket = data.jsapiTicket;
-    // expires_in单位秒 5分钟
+    // expires_in单位秒 5分钟 
     accessTicket.expireIn = Date.now() + (data.expireIn - 300) * 1000;
     fs.writeFileSync(path.resolve(__dirname, "../datas/ticket.json"), JSON.stringify(accessTicket));
     return accessTicket.jsapiTicket
